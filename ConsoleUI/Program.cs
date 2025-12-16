@@ -46,6 +46,25 @@ namespace ConsoleUI
              */
 
             // Call each of the drive methods for one car and one motorcycle
+            
+            var vehicles = new List<Vehicle>();
+            
+            var car = new Car() {Year = "2018", Make = "BMW", Model = "4 series", HasTrunk = true};
+            var motorcycle = new Motorcycle() { Year = "2020", Make = "Harley", Model = "Sport", HasSideCart = true };
+            Vehicle carTwo = new Car() { Year = "2022", Make = "Jeep", Model = "Trackhawk", HasTrunk = true };
+            Vehicle motorcycleTwo = new Motorcycle() {Year = "2015", Make = "Yamaha", Model = "YZF-R15", HasSideCart = true };
+            
+            vehicles.Add(car);
+            vehicles.Add(motorcycle);
+            vehicles.Add(carTwo);
+            vehicles.Add(motorcycleTwo);
+
+            foreach (var v in vehicles)
+            {
+                Console.WriteLine($"Year: {v.Year}, Make: {v.Make}, Model: {v.Model}");
+                v.DriveVirtual();
+                v.DriveAbstract();
+            }
 
             #endregion            
             Console.ReadLine();
